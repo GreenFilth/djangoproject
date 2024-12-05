@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+</head>
+<body>
+<div class="container">
+
+
+    <div class="header item">
+        header
+    </div>
+
+    <div class ="pic item">
+        <img src="https://academy-of-capital.ru/upload/iblock/ebf/5ps6bxfn6svn99taaibtlgtdzy7hkr82.jpeg" alt="">
+    </div>
+
+
+    <div class="sidebar item">
+    <ul>
+    {% for key, value in menu.items %}
+    <li> <a href="{{ value }}">{{ key }}</a> </li>
+    {% endfor %}
+</ul>
+    </div>
+
+    <div class="content item">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
