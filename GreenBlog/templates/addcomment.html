@@ -4,7 +4,13 @@
 {% block content %}
 
 <h1>{{ title }}</h1>
-<form action="">
+<form action="{% url 'thx_page' %}" method="POST">
+    {% csrf_token %}
+    <select name="post">
+        {% for p in posts%}
+            <option value="{{p.id}}">{{p.name}}</option>
+        {% endfor %}
+    </select>
     <label for="user_name"></label>
     <input name='user_name' id="user_name">
     <label for="comment"></label>
