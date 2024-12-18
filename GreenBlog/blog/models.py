@@ -12,6 +12,7 @@ class Post(models.Model):
 
 
 class postComment(models.Model):
+    mail = models.CharField(max_length=50, blank=True, null=True)
     user_name = models.CharField(max_length=40)
     comment = models.CharField(max_length=150)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

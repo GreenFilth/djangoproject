@@ -22,6 +22,5 @@ urlpatterns = [
     path('', main),
     path('about/', about_page),
     path('posts/', include('blog.urls')),
-    path('addcomment/', include('blog.urls')),
     path('admin/', admin.site.urls)
 ]
